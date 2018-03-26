@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php include('dbcon.php'); ?>
 <html>
     <head>
         <!--Import Google Icon Font-->
@@ -25,14 +27,13 @@
                             <span class="card-title blue-text text-darken-2">Student Login Panel</span>
                             <p>Please provide following details</p>
                             <div class="row">
-                                <form class="col s12">
+                                <form class="col s12" method="post" action="#">
                                     <div class="row">
                                         <div class="input-field col s2">
                                             <i class="small material-icons">account_box</i>
                                         </div>
                                         <div class="input-field col s10">
-                                            <input id="user_name" type="text" class="validate">
-                                            <label for="user_name">User Name</label>
+                                            <input type="text" class="validate" name="user" placeholder="USERNAME">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -40,13 +41,12 @@
                                             <i class="small material-icons">lock</i>
                                         </div>
                                         <div class="input-field col s10">
-                                            <input id="password" type="password" class="validate">
-                                            <label for="password">Password</label>
+                                            <input type="password" class="validate" name="pass" placeholder="PASSWORD">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            <a class="waves-effect waves-light btn" style="width: 100%;">LOGIN</a>
+                                            <input type="submit" class="waves-effect waves-light btn" name="login" value="LOGIN" style="width: 100%;"></input>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -59,16 +59,33 @@
                                     </div>
                                 </form>
                             </div>
+                            <?php
+                                if (isset($_POST['login']))
+                                    {
+                                    $username = mysqli_real_escape_string($con, $_POST['user']);
+                                    $password = mysqli_real_escape_string($con, $_POST['pass']);
+            
+                                    $query      = mysqli_query($con, "SELECT * FROM student WHERE  pass='$password' and username='$username'");
+                                    $row        = mysqli_fetch_array($query);
+                                    $num_row    = mysqli_num_rows($query);
+            
+                                    if ($num_row > 0) 
+                                        {           
+                                        $_SESSION['user_id']=$row['username'];
+                                        header('location:feedback.php');
+                    
+                                        }
+                                    else
+                                        {
+                                        echo 'Invalid Username and Password Combination';
+                                        }
+                                    }
+                                ?>
                             <i class="small material-icons">home</i>               <a href="index.html"><p class="purple-text">Home</p></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-       
-        <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
     </body>
 </html>
