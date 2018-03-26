@@ -33,9 +33,9 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="login.html">Admin</a></li>
-                    <li><a href="login.html">Faculty</a></li>
-                    <li><a href="login.html">Student</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Faculty</a></li>
+                    <li><a href="login.php">Student</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="index.html">Home</a></li>
