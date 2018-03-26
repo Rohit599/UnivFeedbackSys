@@ -33,7 +33,7 @@
                                             <i class="small material-icons">account_box</i>
                                         </div>
                                         <div class="input-field col s10">
-                                            <input type="text" class="validate" name="user" placeholder="USERNAME">
+                                            <input type="text" class="validate" name="user" placeholder="ROLL NUMBER">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -79,6 +79,12 @@
                                                                 <div class="input-field col s6">
                                                                     <input id="semester" type="text" class="validate">
                                                                     <label for="semester">Semester</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="input-field col s12">
+                                                                    <input id="rollno" type="text" class="validate">
+                                                                    <label for="rollno">Roll Number</label>
                                                                 </div>
                                                             </div>
                                                             <div class="row">
