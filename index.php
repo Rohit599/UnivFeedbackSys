@@ -26,7 +26,7 @@
                 <style>
                     @media only screen and (min-width: 992px) {
                         .brand-logo{
-                            margin-left: 25%;
+                            margin-left: 31%;
                         }
                     }
                 </style>
