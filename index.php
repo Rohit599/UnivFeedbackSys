@@ -22,7 +22,7 @@
                         }
                     }
                 </style>
-                <a href="#!" class="brand-logo">University Feedback</a>
+                <a href="#!" class="brand-logo" style="font-size: 1.4rem;">University Feedback</a>
                 <style>
                     @media only screen and (min-width: 992px) {
                         .brand-logo{
